@@ -1,0 +1,13 @@
+C:\Users\student\source\repos\Volby\Volby\bin\Debug\netcoreapp3.1\Volby.exe
+C:\Users\student\source\repos\Volby\Volby\bin\Debug\netcoreapp3.1\Volby.deps.json
+C:\Users\student\source\repos\Volby\Volby\bin\Debug\netcoreapp3.1\Volby.runtimeconfig.json
+C:\Users\student\source\repos\Volby\Volby\bin\Debug\netcoreapp3.1\Volby.runtimeconfig.dev.json
+C:\Users\student\source\repos\Volby\Volby\bin\Debug\netcoreapp3.1\Volby.dll
+C:\Users\student\source\repos\Volby\Volby\bin\Debug\netcoreapp3.1\Volby.pdb
+C:\Users\student\source\repos\Volby\Volby\obj\Debug\netcoreapp3.1\Volby.csprojAssemblyReference.cache
+C:\Users\student\source\repos\Volby\Volby\obj\Debug\netcoreapp3.1\Volby.AssemblyInfoInputs.cache
+C:\Users\student\source\repos\Volby\Volby\obj\Debug\netcoreapp3.1\Volby.AssemblyInfo.cs
+C:\Users\student\source\repos\Volby\Volby\obj\Debug\netcoreapp3.1\Volby.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\Volby\Volby\obj\Debug\netcoreapp3.1\Volby.dll
+C:\Users\student\source\repos\Volby\Volby\obj\Debug\netcoreapp3.1\Volby.pdb
+C:\Users\student\source\repos\Volby\Volby\obj\Debug\netcoreapp3.1\Volby.genruntimeconfig.cache
