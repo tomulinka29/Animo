@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace Volby
 {
@@ -8,6 +9,7 @@ namespace Volby
         static void Main(string[] args)
         {
 
+            // var data = LoadParties("Data.json");
 
             string[] parties = LoadParties("Parties.txt", ';');
             int[] votes = LoadVotes("Votes.txt", ';');
@@ -19,7 +21,7 @@ namespace Volby
                 votes = new int[parties.Length];
             }
 
-            ShowParts(parties);
+            ShowParties(parties);
             Console.WriteLine("----------------");
 
 
@@ -41,7 +43,7 @@ namespace Volby
 
         }
 
-        private static void ShowParts(string[] parts)
+        private static void ShowParties(string[] parts)
         {
             int index = 1; // indexing from 1
             foreach (string strana in parts)
@@ -68,6 +70,11 @@ namespace Volby
         private static string[] LoadParties(string path, char delimiter)
         {
             return File.ReadAllText(path).Split(delimiter); ;
+        }
+
+        private static Party[] LoadParties(string path)
+        {
+            return JsonConvert.DeserializeObject<Party[]>(path);
         }
 
         private static int[] LoadVotes(string path, char delimiter)

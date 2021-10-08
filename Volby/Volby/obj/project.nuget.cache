@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "iXHfBQXX5NqEWoZVDbIBEA7nBWhtT36F7JI354zS68T1zLgg2gA3jVwBo2ewq8da54edjVJOlDk3CR8gOMoM/g==",
+  "dgSpecHash": "naFIgkDLJXwwjUa4VLkwmofmnDG4fmA6LDnJkk1gFu9PCOBwzvz+J8izqnjbD692cZt3KE4uHe6HAuKuBt64nw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\student\\source\\repos\\Volby\\Volby\\Volby.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\student\\Documents\\Git\\Animo\\Volby\\Volby\\Volby.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\student\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\student\\source\\repos\\Volby\\Volby\\Volby.csproj": {}
+    "C:\\Users\\student\\Documents\\Git\\Animo\\Volby\\Volby\\Volby.csproj": {}
   },
   "projects": {
-    "C:\\Users\\student\\source\\repos\\Volby\\Volby\\Volby.csproj": {
+    "C:\\Users\\student\\Documents\\Git\\Animo\\Volby\\Volby\\Volby.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\student\\source\\repos\\Volby\\Volby\\Volby.csproj",
+        "projectUniqueName": "C:\\Users\\student\\Documents\\Git\\Animo\\Volby\\Volby\\Volby.csproj",
         "projectName": "Volby",
-        "projectPath": "C:\\Users\\student\\source\\repos\\Volby\\Volby\\Volby.csproj",
+        "projectPath": "C:\\Users\\student\\Documents\\Git\\Animo\\Volby\\Volby\\Volby.csproj",
         "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\student\\source\\repos\\Volby\\Volby\\obj\\",
+        "outputPath": "C:\\Users\\student\\Documents\\Git\\Animo\\Volby\\Volby\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
