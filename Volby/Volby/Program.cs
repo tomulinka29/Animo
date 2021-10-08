@@ -8,57 +8,54 @@ namespace Volby
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Chcete editovat, nebo volit? [0/1]");
+            int mode;
+            int.TryParse(Console.ReadLine(), out mode);
 
-            // var data = LoadParties("Data.json");
-
-            string[] parties = LoadParties("Parties.txt", ';');
-            int[] votes = LoadVotes("Votes.txt", ';');
-
-            if (votes.Length != parties.Length)
+            if (mode == 1) // voting part
             {
-                Console.WriteLine("Poslední výsledky jsou špatné, vytvářím novou tabulku :D");
+                var parties = LoadData("Data.json");
+
+                ShowParties(parties);
                 Console.WriteLine("----------------");
-                votes = new int[parties.Length];
+
+                int chosenID = ChoosePart(parties);
+                Console.WriteLine("----------------");
+
+                try
+                {
+                    SaveData(parties);
+                    Console.WriteLine("OK, zvolil/a jste {0}", parties[chosenID]);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Chyba při zápisu vašeho hlasu: {0}", e.Message);
+                }
             }
-
-            ShowParties(parties);
-            Console.WriteLine("----------------");
-
-
-            int chosenID = ChoosePart(parties);
-            Console.WriteLine("----------------");
-
-            try
-            {
-                votes[chosenID]++;
-                SaveVotes("Votes.txt", ';', votes);
-                Console.WriteLine("OK, zvolil/a jste {0}", parties[chosenID]);
+            else // editation part
+            { 
+            
             }
-            catch (Exception e)
-            {
-                Console.WriteLine("Chyba při zápisu vašeho hlasu: {0}", e.Message);
-            }
-
 
 
         }
 
-        private static void ShowParties(string[] parts)
+        private static void ShowParties(Party[] parties)
         {
             int index = 1; // indexing from 1
-            foreach (string strana in parts)
+            foreach (Party strana in parties)
             {
-                Console.WriteLine(index.ToString() + ": " + strana);
+                Console.WriteLine(index.ToString() + ": " + strana.name);
                 index++;
             }
         }
 
-        private static int ChoosePart(string[] parts)
+        private static int ChoosePart(Party[] parties)
         {
             Console.WriteLine("Zadejte číslo zvolené strany: ");
 
             int chosenID; // indexing from 1
-            while (!int.TryParse(Console.ReadLine(), out chosenID) || (chosenID < 1 || chosenID > parts.Length))
+            while (!int.TryParse(Console.ReadLine(), out chosenID) || (chosenID < 1 || chosenID > parties.Length))
             {
                 Console.WriteLine("Neplatný vstup!");
             }
@@ -67,14 +64,19 @@ namespace Volby
             return chosenID;
         }
 
-        private static string[] LoadParties(string path, char delimiter)
+        private static Party[] LoadData(string path)
         {
-            return File.ReadAllText(path).Split(delimiter); ;
+            if (File.Exists(path))
+                return JsonConvert.DeserializeObject<Party[]>(path);
+            else
+                File.Create(path);
+                return null;
         }
 
-        private static Party[] LoadParties(string path)
+        private static void SaveData(Party[] parties)
         {
-            return JsonConvert.DeserializeObject<Party[]>(path);
+            string output = JsonConvert.SerializeObject(parties);
+            File.WriteAllText("Data.json", output);
         }
 
         private static int[] LoadVotes(string path, char delimiter)
