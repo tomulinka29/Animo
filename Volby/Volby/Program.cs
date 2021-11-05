@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace Volby
@@ -15,67 +16,95 @@ namespace Volby
 
             if (mode == 1) // voting part
             {
-                var parties = LoadData("Data.json");
-
-                if (parties == null)
-                {
-                    Console.WriteLine("Nebyly nacteny zadne strany");
-                    return;
-                }
-
-
-                ShowParties(parties);
-                Console.WriteLine("----------------");
-
-                int chosenID = ChoosePart(parties);
-                Console.WriteLine("----------------");
-
-                try
-                {
-                    SaveData(parties);
-                    Console.WriteLine("OK, zvolil/a jste {0}", parties[chosenID]);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Chyba při zápisu vašeho hlasu: {0}", e.Message);
-                }
+                VotingMode();
             }
             else if (mode == 0) // editation part
             {
-                var parties = LoadData("Data.json");
-                if (parties == null)
-                    parties = new List<Party>();
-
-                Console.WriteLine("Jakou upravu chcete provest?: ");
-                Console.WriteLine("------------------------------");
-                Console.WriteLine("Pridat politickou stranu - 1");
-                Console.WriteLine("------------------------------");
-
-                int operationIndex;
-                int.TryParse(Console.ReadLine(), out operationIndex);
-
-                switch (operationIndex)
-                {
-                    case 1:
-                        Console.WriteLine("Zadejte nazev nove strany: ");
-                        parties.Add(new Party(Console.ReadLine()));
-                        break;
-                }
-
-
-                try
-                {
-                    SaveData(parties);
-                    Console.WriteLine("Upravy probehly uspesne");
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Chyba při zápisu uprav: {0}", e.Message);
-                }
+                EditationMode();
             }
-            else if (mode == 2)
+            else if (mode == 2) // show results
             {
-                // show results    
+                ResultsMode();
+            }
+        }
+
+
+        private static void VotingMode()
+        {
+            var parties = LoadData("Data.json");
+
+            if (parties == null)
+            {
+                Console.WriteLine("Nebyly nacteny zadne strany");
+                return;
+            }
+
+
+            ShowParties(parties);
+            Console.WriteLine("----------------");
+
+            int chosenID = ChoosePart(parties);
+            Console.WriteLine("----------------");
+
+            try
+            {
+                SaveData(parties);
+                Console.WriteLine("OK, zvolil/a jste {0}", parties[chosenID]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Chyba při zápisu vašeho hlasu: {0}", e.Message);
+            }
+        }
+
+        private static void EditationMode()
+        {
+            var parties = LoadData("Data.json");
+            if (parties == null)
+                parties = new List<Party>();
+
+            Console.WriteLine("Jakou upravu chcete provest?: ");
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Pridat politickou stranu - 1");
+            Console.WriteLine("------------------------------");
+
+            int operationIndex;
+            int.TryParse(Console.ReadLine(), out operationIndex);
+
+            switch (operationIndex)
+            {
+                case 1:
+                    Console.WriteLine("Zadejte nazev nove strany: ");
+                    parties.Add(new Party(Console.ReadLine()));
+                    break;
+            }
+
+
+            try
+            {
+                SaveData(parties);
+                Console.WriteLine("Upravy probehly uspesne");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Chyba při zápisu uprav: {0}", e.Message);
+            }
+        }
+
+        private static void ResultsMode()
+        {
+            var parties = LoadData("Data.json");
+
+            if (parties == null)
+            {
+                Console.WriteLine("Nebyly nacteny zadne strany");
+                return;
+            }
+
+            Console.WriteLine("--------------------------------------");
+            foreach (Party party in parties)
+            {
+                Console.WriteLine(party.name + "".PadLeft(parties.Max(e => e.name.Length + 4) - party.name.Length) + party.voteCount);
             }
         }
 
