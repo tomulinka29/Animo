@@ -142,6 +142,16 @@ namespace Volby
             {
                 Console.WriteLine(party.name + "".PadLeft(parties.Max(e => e.name.Length + 4) - party.name.Length) + party.voteCount);
             }
+            Console.WriteLine("--------------------------------------");
+
+            int maxVotes = parties.Max(e => e.voteCount);
+
+            foreach (var party in parties)
+            {
+                if (party.voteCount == maxVotes)
+                    Console.WriteLine("Nejvice hlasu ma: " + party.name);
+            }
+
 
             Console.ReadLine();
         }
