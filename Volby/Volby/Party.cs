@@ -7,7 +7,7 @@ namespace Volby
     class Party
     {
         public string name;
-        public int voteCount { get; private set; }
+        public int voteCount;
 
         public Party(string name)
         {

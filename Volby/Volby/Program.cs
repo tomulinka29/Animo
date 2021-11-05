@@ -10,22 +10,40 @@ namespace Volby
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Chcete editovat, volit, nebo se podivat na vysledky? [0/1/2]");
-            int mode;
-            int.TryParse(Console.ReadLine(), out mode);
 
-            if (mode == 1) // voting part
+            bool endProgram = false; // flag for ending a program
+
+            while (!endProgram)
             {
-                VotingMode();
+                Console.Clear();
+                Console.WriteLine("Chcete volit, editovat, nebo se podivat na vysledky? [1/2/3]");
+                int mode;
+                int.TryParse(Console.ReadLine(), out mode);
+
+                Console.Clear();
+
+                switch (mode)
+                {
+                    case 1:
+                        VotingMode();
+                        break;
+
+                    case 2:
+                        EditationMode();
+                        break;
+
+                    case 3:
+                        ResultsMode();
+                        break;
+
+                    default:
+                        Console.WriteLine("Neplatna volba");
+                    break;
+
+                }
             }
-            else if (mode == 0) // editation part
-            {
-                EditationMode();
-            }
-            else if (mode == 2) // show results
-            {
-                ResultsMode();
-            }
+
+
         }
 
 
@@ -40,20 +58,31 @@ namespace Volby
             }
 
 
-            ShowParties(parties);
-            Console.WriteLine("----------------");
-
-            int chosenID = ChoosePart(parties);
-            Console.WriteLine("----------------");
+         
 
             try
             {
+                //Show parties
+                ShowParties(parties);
+                Console.WriteLine("----------------");
+
+
+                //Choose which party do you wanna give your vote
+                int chosenID = ChooseParty(parties);
+                Console.WriteLine("----------------");
+
+                //Add vote to selected party and save
+                parties[chosenID].AddVote();
                 SaveData(parties);
-                Console.WriteLine("OK, zvolil/a jste {0}", parties[chosenID]);
+
+                //Some info
+                Console.WriteLine("OK, zvolil/a jste {0}", parties[chosenID].name);
+                Console.ReadLine();
             }
             catch (Exception e)
             {
                 Console.WriteLine("Chyba při zápisu vašeho hlasu: {0}", e.Message);
+                Console.ReadLine();
             }
         }
 
@@ -77,6 +106,11 @@ namespace Volby
                     Console.WriteLine("Zadejte nazev nove strany: ");
                     parties.Add(new Party(Console.ReadLine()));
                     break;
+
+                default:
+                    Console.WriteLine("Neplatna volba");
+                    Console.ReadLine();
+                    return;
             }
 
 
@@ -84,10 +118,12 @@ namespace Volby
             {
                 SaveData(parties);
                 Console.WriteLine("Upravy probehly uspesne");
+                Console.ReadLine();
             }
             catch (Exception e)
             {
                 Console.WriteLine("Chyba při zápisu uprav: {0}", e.Message);
+                Console.ReadLine();
             }
         }
 
@@ -106,6 +142,8 @@ namespace Volby
             {
                 Console.WriteLine(party.name + "".PadLeft(parties.Max(e => e.name.Length + 4) - party.name.Length) + party.voteCount);
             }
+
+            Console.ReadLine();
         }
 
         private static void ShowParties(List<Party> parties)
@@ -118,7 +156,7 @@ namespace Volby
             }
         }
 
-        private static int ChoosePart(List<Party> parties)
+        private static int ChooseParty(List<Party> parties)
         {
             Console.WriteLine("Zadejte číslo zvolené strany: ");
 
@@ -136,7 +174,10 @@ namespace Volby
         {
             if (File.Exists(path) && File.ReadAllText(path).Trim().Length != 0)
             {
-                return JsonConvert.DeserializeObject<List<Party>>(File.ReadAllText(path));
+                string fileContent = File.ReadAllText(path);
+                List<Party> parties = JsonConvert.DeserializeObject<List<Party>>(fileContent);
+
+                return parties;
             }
             else
             {
