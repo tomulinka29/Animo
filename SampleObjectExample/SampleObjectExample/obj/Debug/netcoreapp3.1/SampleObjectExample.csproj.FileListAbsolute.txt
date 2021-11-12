@@ -1,0 +1,13 @@
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\bin\Debug\netcoreapp3.1\SampleObjectExample.exe
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\bin\Debug\netcoreapp3.1\SampleObjectExample.deps.json
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\bin\Debug\netcoreapp3.1\SampleObjectExample.runtimeconfig.json
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\bin\Debug\netcoreapp3.1\SampleObjectExample.runtimeconfig.dev.json
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\bin\Debug\netcoreapp3.1\SampleObjectExample.dll
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\bin\Debug\netcoreapp3.1\SampleObjectExample.pdb
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\obj\Debug\netcoreapp3.1\SampleObjectExample.csprojAssemblyReference.cache
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\obj\Debug\netcoreapp3.1\SampleObjectExample.AssemblyInfoInputs.cache
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\obj\Debug\netcoreapp3.1\SampleObjectExample.AssemblyInfo.cs
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\obj\Debug\netcoreapp3.1\SampleObjectExample.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\obj\Debug\netcoreapp3.1\SampleObjectExample.dll
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\obj\Debug\netcoreapp3.1\SampleObjectExample.pdb
+C:\Users\student\Documents\Git\Animo\SampleObjectExample\SampleObjectExample\obj\Debug\netcoreapp3.1\SampleObjectExample.genruntimeconfig.cache
