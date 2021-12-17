@@ -1,0 +1,13 @@
+C:\Users\student\source\repos\Sorts\Sorts\bin\Debug\netcoreapp3.1\Sorts.exe
+C:\Users\student\source\repos\Sorts\Sorts\bin\Debug\netcoreapp3.1\Sorts.deps.json
+C:\Users\student\source\repos\Sorts\Sorts\bin\Debug\netcoreapp3.1\Sorts.runtimeconfig.json
+C:\Users\student\source\repos\Sorts\Sorts\bin\Debug\netcoreapp3.1\Sorts.runtimeconfig.dev.json
+C:\Users\student\source\repos\Sorts\Sorts\bin\Debug\netcoreapp3.1\Sorts.dll
+C:\Users\student\source\repos\Sorts\Sorts\bin\Debug\netcoreapp3.1\Sorts.pdb
+C:\Users\student\source\repos\Sorts\Sorts\obj\Debug\netcoreapp3.1\Sorts.csprojAssemblyReference.cache
+C:\Users\student\source\repos\Sorts\Sorts\obj\Debug\netcoreapp3.1\Sorts.AssemblyInfoInputs.cache
+C:\Users\student\source\repos\Sorts\Sorts\obj\Debug\netcoreapp3.1\Sorts.AssemblyInfo.cs
+C:\Users\student\source\repos\Sorts\Sorts\obj\Debug\netcoreapp3.1\Sorts.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\Sorts\Sorts\obj\Debug\netcoreapp3.1\Sorts.dll
+C:\Users\student\source\repos\Sorts\Sorts\obj\Debug\netcoreapp3.1\Sorts.pdb
+C:\Users\student\source\repos\Sorts\Sorts\obj\Debug\netcoreapp3.1\Sorts.genruntimeconfig.cache
