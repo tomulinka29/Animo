@@ -34,17 +34,24 @@ namespace ArduinoCommunication
         }
 
         private void RunButton_Click(object sender, RoutedEventArgs e)
-        { 
-            baudrate = int.Parse(baudBox.Text);
-            port = portBox.Text;
+        {
+            try
+            {
+                baudrate = int.Parse(baudBox.Text);
+                port = portBox.Text;
 
-            serialPort = new SerialPort(port, baudrate);
-            serialPort.Open();
+                serialPort = new SerialPort(port, baudrate);
+                serialPort.Open();
 
-            reading = true;
+                reading = true;
 
-            Task readingTask = new Task(Read);
-            readingTask.Start();
+                Task readingTask = new Task(Read);
+                readingTask.Start();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
@@ -86,7 +93,7 @@ namespace ArduinoCommunication
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            if (serialPort.IsOpen)
+            if (serialPort?.IsOpen ?? false)
             {
                 lock (lockObject)
                 {
