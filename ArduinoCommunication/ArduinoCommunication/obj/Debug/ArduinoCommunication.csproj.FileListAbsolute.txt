@@ -1,0 +1,15 @@
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.csprojAssemblyReference.cache
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\MainWindow.g.cs
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\App.g.cs
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication_MarkupCompile.cache
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication_MarkupCompile.lref
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\bin\Debug\ArduinoCommunication.exe.config
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\bin\Debug\ArduinoCommunication.exe
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\bin\Debug\ArduinoCommunication.pdb
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\MainWindow.baml
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.g.resources
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.Properties.Resources.resources
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.csproj.GenerateResource.cache
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.exe
+C:\Users\student\source\repos\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.pdb
