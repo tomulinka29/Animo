@@ -1,0 +1,15 @@
+C:\Users\student\source\repos\Diar\Diar\bin\Debug\netcoreapp3.1\Diar.exe
+C:\Users\student\source\repos\Diar\Diar\bin\Debug\netcoreapp3.1\Diar.deps.json
+C:\Users\student\source\repos\Diar\Diar\bin\Debug\netcoreapp3.1\Diar.runtimeconfig.json
+C:\Users\student\source\repos\Diar\Diar\bin\Debug\netcoreapp3.1\Diar.runtimeconfig.dev.json
+C:\Users\student\source\repos\Diar\Diar\bin\Debug\netcoreapp3.1\Diar.dll
+C:\Users\student\source\repos\Diar\Diar\bin\Debug\netcoreapp3.1\Diar.pdb
+C:\Users\student\source\repos\Diar\Diar\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\student\source\repos\Diar\Diar\obj\Debug\netcoreapp3.1\Diar.csprojAssemblyReference.cache
+C:\Users\student\source\repos\Diar\Diar\obj\Debug\netcoreapp3.1\Diar.AssemblyInfoInputs.cache
+C:\Users\student\source\repos\Diar\Diar\obj\Debug\netcoreapp3.1\Diar.AssemblyInfo.cs
+C:\Users\student\source\repos\Diar\Diar\obj\Debug\netcoreapp3.1\Diar.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\Diar\Diar\obj\Debug\netcoreapp3.1\Diar.csproj.CopyComplete
+C:\Users\student\source\repos\Diar\Diar\obj\Debug\netcoreapp3.1\Diar.dll
+C:\Users\student\source\repos\Diar\Diar\obj\Debug\netcoreapp3.1\Diar.pdb
+C:\Users\student\source\repos\Diar\Diar\obj\Debug\netcoreapp3.1\Diar.genruntimeconfig.cache
