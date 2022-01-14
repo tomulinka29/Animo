@@ -33,28 +33,51 @@ namespace ArduinoCommunication
         public MainWindow()
         {
             InitializeComponent();
+            serialPort = new SerialPort();
         }
 
         private void RunButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                baudrate = int.Parse(baudBox.Text);
-                port = (portBox.Text.StartsWith("COM")) ? portBox.Text : "COM" + int.Parse(portBox.Text);
-
-                serialPort = new SerialPort(port, baudrate);
-                serialPort.Open();
-
-                reading = true;
-                okSettings = true;
-
                 Task readingTask = new Task(Read);
-                readingTask.Start();
+
+                if (serialPort == null)
+                {
+                    baudrate = int.Parse(baudBox.Text);
+                    port = (portBox.Text.StartsWith("COM")) ? portBox.Text : "COM" + int.Parse(portBox.Text);
+
+                    serialPort.PortName = port;
+                    serialPort.BaudRate = baudrate;
+
+                    serialPort.Open();
+
+                    reading = true;
+                    okSettings = true;
+
+                    readingTask.Start();
+                }
+                else
+                {
+                    if (serialPort.IsOpen)
+                        serialPort.Close();
+
+                    baudrate = int.Parse(baudBox.Text);
+                    port = (portBox.Text.StartsWith("COM")) ? portBox.Text : "COM" + int.Parse(portBox.Text);
+
+                    serialPort.PortName = port;
+                    serialPort.BaudRate = baudrate;
+
+                    if (serialPort.IsOpen == false)
+                        serialPort.Open();
+
+                    readingTask.Start();
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 okSettings = false;
-                MessageBox.Show("Neplatné nastavení");
+                MessageBox.Show("Neplatné nastavení " + ex.Message);
             }
         }
 
@@ -91,20 +114,27 @@ namespace ArduinoCommunication
         {
             if (okSettings)
             {
-                string received = "";
-
-                lock (lockObject)
+                try
                 {
-                    while (reading)
-                    {
-                        received = serialPort.ReadExisting();
+                    string received = "";
 
-                        if (received.Length > 0)
+                    lock (lockObject)
+                    {
+                        while (reading)
                         {
-                            Message message = JsonConvert.DeserializeObject<Message>(received);
-                            Dispatcher.Invoke((Action)(() => recBlock.Text += message.text.Trim()));
+                            received = serialPort.ReadExisting();
+
+                            if (received.Length > 0)
+                            {
+                                //Message message = JsonConvert.DeserializeObject<Message>(received.Trim());
+                                Dispatcher.Invoke((Action)(() => recBlock.Text += received.Trim()));
+                            }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
                 }
             }
             else
