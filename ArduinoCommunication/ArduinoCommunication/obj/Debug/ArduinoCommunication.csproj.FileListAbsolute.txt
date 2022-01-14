@@ -28,3 +28,6 @@ C:\Users\student\source\repos\Animo\ArduinoCommunication\ArduinoCommunication\ob
 C:\Users\student\source\repos\Animo\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.csproj.CoreCompileInputs.cache
 C:\Users\student\source\repos\Animo\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.exe
 C:\Users\student\source\repos\Animo\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.pdb
+C:\Users\student\source\repos\Animo\ArduinoCommunication\ArduinoCommunication\bin\Debug\Newtonsoft.Json.dll
+C:\Users\student\source\repos\Animo\ArduinoCommunication\ArduinoCommunication\bin\Debug\Newtonsoft.Json.xml
+C:\Users\student\source\repos\Animo\ArduinoCommunication\ArduinoCommunication\obj\Debug\ArduinoCommunication.csproj.CopyComplete

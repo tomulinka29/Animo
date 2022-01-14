@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace ArduinoCommunication
         private int baudrate;
         private string port;
         private bool reading;
+        private bool okSettings;
         private SerialPort serialPort;
 
         private object lockObject = new object();
@@ -38,57 +40,78 @@ namespace ArduinoCommunication
             try
             {
                 baudrate = int.Parse(baudBox.Text);
-                port = portBox.Text;
+                port = (portBox.Text.StartsWith("COM")) ? portBox.Text : "COM" + int.Parse(portBox.Text);
 
                 serialPort = new SerialPort(port, baudrate);
                 serialPort.Open();
 
                 reading = true;
+                okSettings = true;
 
                 Task readingTask = new Task(Read);
                 readingTask.Start();
             }
             catch (Exception)
             {
-                throw;
+                okSettings = false;
+                MessageBox.Show("Neplatné nastavení");
             }
         }
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            reading = false;
-
-            lock (lockObject) 
+            if (okSettings)
             {
-                try
-                {
-                    serialPort.WriteLine(sendBox.Text);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                reading = false;
 
-                reading = true;
-            }  
+                lock (lockObject)
+                {
+                    try
+                    {
+                        var message = new Message(sendBox.Text);
+
+                        serialPort.WriteLine(JsonConvert.SerializeObject( message ));
+                        sendBox.Text = "";
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                    reading = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Neplatné nastavení");
+            }
         }
 
         private void Read()
         {
-            string text = "";
-
-            lock (lockObject)
+            if (okSettings)
             {
-                while (reading)
-                {
-                    text = serialPort.ReadExisting();
+                string received = "";
 
-                    if (text.Length > 0)
-                        Dispatcher.Invoke((Action)(() => recBlock.Text += text.Trim()));
+                lock (lockObject)
+                {
+                    while (reading)
+                    {
+                        received = serialPort.ReadExisting();
+
+                        if (received.Length > 0)
+                        {
+                            Message message = JsonConvert.DeserializeObject<Message>(received);
+                            Dispatcher.Invoke((Action)(() => recBlock.Text += message.text.Trim()));
+                        }
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Neplatné nastavení");
+            }
 
-        
         }
 
         private void Window_Closed(object sender, EventArgs e)
