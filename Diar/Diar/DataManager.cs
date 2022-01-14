@@ -11,16 +11,17 @@ namespace Diar
 {
     class DataManager
     {
-
-        [DllImport("user32.dll", EntryPoint = "GetKeyboardState", SetLastError = true)]
-        private static extern bool NativeGetKeyboardState([Out] byte[] keyStates);
-
-
         public static List<Event> LoadEvents(string path)
         {
             try
             {
-                return JsonConvert.DeserializeObject<List<Event>>(path);
+                if (File.Exists(path))
+                {
+                    string text = File.ReadAllText(path);
+                    return JsonConvert.DeserializeObject<List<Event>>(text);
+                }
+
+                return null;
             }
             catch(Exception e)
             {
@@ -37,6 +38,9 @@ namespace Diar
         {
             try
             {
+                if (events == null)
+                    return false;
+
                 string text = JsonConvert.SerializeObject(events);
                 File.WriteAllText(path, text);
                 return true;
@@ -51,28 +55,6 @@ namespace Diar
         }
 
 
-        private static bool GetKeyboardState(byte[] keyStates)
-        {
-            if (keyStates == null)
-                throw new ArgumentNullException("keyState");
-            if (keyStates.Length != 256)
-                throw new ArgumentException("The buffer must be 256 bytes long.", "keyState");
-            return NativeGetKeyboardState(keyStates);
-        }
-
-        private static byte[] GetKeyboardState()
-        {
-            byte[] keyStates = new byte[256];
-            if (!GetKeyboardState(keyStates))
-                throw new Win32Exception(Marshal.GetLastWin32Error());
-            return keyStates;
-        }
-
-        private static bool AnyKeyPressed()
-        {
-            byte[] keyState = GetKeyboardState();
-            // skip the mouse buttons
-            return keyState.Skip(8).Any(state => (state & 0x80) != 0);
-        }
+      
     }
 }

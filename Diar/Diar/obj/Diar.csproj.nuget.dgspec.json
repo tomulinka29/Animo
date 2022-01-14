@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\student\\source\\repos\\Diar\\Diar\\Diar.csproj": {}
+    "C:\\Users\\student\\source\\repos\\Animo\\Diar\\Diar\\Diar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\student\\source\\repos\\Diar\\Diar\\Diar.csproj": {
+    "C:\\Users\\student\\source\\repos\\Animo\\Diar\\Diar\\Diar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\student\\source\\repos\\Diar\\Diar\\Diar.csproj",
+        "projectUniqueName": "C:\\Users\\student\\source\\repos\\Animo\\Diar\\Diar\\Diar.csproj",
         "projectName": "Diar",
-        "projectPath": "C:\\Users\\student\\source\\repos\\Diar\\Diar\\Diar.csproj",
+        "projectPath": "C:\\Users\\student\\source\\repos\\Animo\\Diar\\Diar\\Diar.csproj",
         "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\student\\source\\repos\\Diar\\Diar\\obj\\",
+        "outputPath": "C:\\Users\\student\\source\\repos\\Animo\\Diar\\Diar\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",

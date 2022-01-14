@@ -8,12 +8,13 @@ namespace Diar
     class EventManager
     {
         private List<Event> events;
-        public string DataPath { get; private set; }
-
 
         public EventManager(List<Event> events)
         {
-            this.events = events;
+            if (events != null)
+                this.events = events;
+            else
+                this.events = new List<Event>();
         }
 
         public void AddEvent(Event newEvent) => events.Add(newEvent);
@@ -31,9 +32,9 @@ namespace Diar
             }
         }
 
-        public Event[] GetEventsFrom(DateTime from) { return events.Where(e => e.From >= from).ToArray(); }
-        public Event[] GetEventsTo(DateTime to) { return events.Where(e => e.From <= to).ToArray(); }
-        public Event[] GetEvents(DateTime from, DateTime to) { return events.Where(e => e.From >= from && e.To <= to).ToArray(); }
-        public Event[] GetAllEvents() { return events.ToArray(); }
+        public List<Event> GetEventsFrom(DateTime from) { return events.Where(e => e.From >= from).ToList(); }
+        public List<Event> GetEventsTo(DateTime to) { return events.Where(e => e.From <= to).ToList(); }
+        public List<Event> GetEvents(DateTime from, DateTime to) { return events.Where(e => e.From >= from && e.To <= to).ToList(); }
+        public List<Event> GetAllEvents() { return events; }
     }
 }
