@@ -32,6 +32,13 @@ namespace Diar
             }
         }
 
+        public List<Event> GetEvents(DateTime day) {
+            return GetEvents(
+            new DateTime(day.Year, day.Month, day.Day, 0, 0, 0),
+            new DateTime(day.Year, day.Month, day.Day, 23, 59, 59)
+            );
+        } 
+
         public List<Event> GetEventsFrom(DateTime from) { return events.Where(e => e.From >= from).ToList(); }
         public List<Event> GetEventsTo(DateTime to) { return events.Where(e => e.From <= to).ToList(); }
         public List<Event> GetEvents(DateTime from, DateTime to) { return events.Where(e => e.From >= from && e.To <= to).ToList(); }

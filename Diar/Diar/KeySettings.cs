@@ -9,14 +9,11 @@ namespace Diar
         public enum Keys { 
             MoveUp = ConsoleKey.UpArrow,
             MoveDown = ConsoleKey.DownArrow,
-            Confirm = ConsoleKey.Enter
-        }
-
-        public enum Actions { 
-            AddEvent,
-            RemoveEvent,
-            EditEvent,
-            Exit
+            Confirm = ConsoleKey.Enter,
+            Back = ConsoleKey.Escape,
+            SelectNextEvent = ConsoleKey.RightArrow,
+            SelectPreviousEvent = ConsoleKey.LeftArrow,
+            AddEvent = ConsoleKey.A
         }
     }
 }
