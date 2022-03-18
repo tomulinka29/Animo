@@ -8,3 +8,13 @@ C:\Users\student\source\repos\FormsCalculator\FormsCalculator\obj\Debug\FormsCal
 C:\Users\student\source\repos\FormsCalculator\FormsCalculator\obj\Debug\FormsCalculator.csproj.CoreCompileInputs.cache
 C:\Users\student\source\repos\FormsCalculator\FormsCalculator\obj\Debug\FormsCalculator.exe
 C:\Users\student\source\repos\FormsCalculator\FormsCalculator\obj\Debug\FormsCalculator.pdb
+C:\Users\student\source\repos\Animo\BirthdayReminder\FormsCalculator\bin\Debug\FormsCalculator.exe.config
+C:\Users\student\source\repos\Animo\BirthdayReminder\FormsCalculator\bin\Debug\FormsCalculator.exe
+C:\Users\student\source\repos\Animo\BirthdayReminder\FormsCalculator\bin\Debug\FormsCalculator.pdb
+C:\Users\student\source\repos\Animo\BirthdayReminder\FormsCalculator\obj\Debug\FormsCalculator.csprojAssemblyReference.cache
+C:\Users\student\source\repos\Animo\BirthdayReminder\FormsCalculator\obj\Debug\FormsCalculator.Form1.resources
+C:\Users\student\source\repos\Animo\BirthdayReminder\FormsCalculator\obj\Debug\FormsCalculator.Properties.Resources.resources
+C:\Users\student\source\repos\Animo\BirthdayReminder\FormsCalculator\obj\Debug\FormsCalculator.csproj.GenerateResource.cache
+C:\Users\student\source\repos\Animo\BirthdayReminder\FormsCalculator\obj\Debug\FormsCalculator.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\Animo\BirthdayReminder\FormsCalculator\obj\Debug\FormsCalculator.exe
+C:\Users\student\source\repos\Animo\BirthdayReminder\FormsCalculator\obj\Debug\FormsCalculator.pdb

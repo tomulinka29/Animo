@@ -1,0 +1,13 @@
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\bin\Debug\CalculatorForms.exe.config
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\bin\Debug\CalculatorForms.exe
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\bin\Debug\CalculatorForms.pdb
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\obj\Debug\CalculatorForms.csprojAssemblyReference.cache
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\obj\Debug\CalculatorForms.Form1.resources
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\obj\Debug\CalculatorForms.Properties.Resources.resources
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\obj\Debug\CalculatorForms.csproj.GenerateResource.cache
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\obj\Debug\CalculatorForms.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\obj\Debug\CalculatorForms.exe
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\obj\Debug\CalculatorForms.pdb
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\bin\Debug\CalculatorLib.dll
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\bin\Debug\CalculatorLib.pdb
+C:\Users\student\source\repos\CalculatorLib\CalculatorForms\obj\Debug\CalculatorForms.csproj.CopyComplete
