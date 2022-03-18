@@ -21,5 +21,10 @@ namespace CalculatorForms
         {
             throw new NotImplementedException();
         }
+
+        public double getValue()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorForms
 {
-    interface Operator
+    interface Operator : TreeNode
     {
         double Calculate();
     }
